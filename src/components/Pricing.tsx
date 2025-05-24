@@ -21,11 +21,12 @@ export const Pricing = () => {
       ],
       buttonText: "🛒 QUERO O KIT BÁSICO",
       popular: false,
+      mostSold: false,
       bgColor: "bg-white",
       checkoutLink: "https://projeto-013.pay.yampi.com.br/r/AFR0HSFH6V"
     },
     {
-      title: "⭐ MAIS VENDIDO",
+      title: "💡 INTELIGENTE",
       name: "Super Kit Completo",
       originalPrice: "R$127",
       discount: "89%",
@@ -43,13 +44,15 @@ export const Pricing = () => {
         "Grupo VIP no Telegram",
         "Suporte prioritário"
       ],
-      buttonText: "⭐ QUERO O SUPER KIT",
-      popular: true,
+      buttonText: "💡 QUERO O SUPER KIT",
+      popular: false,
+      mostSold: false,
+      smartChoice: true,
       bgColor: "bg-gradient-to-br from-orange-50 to-yellow-50",
       checkoutLink: "https://projeto-013.pay.yampi.com.br/r/21SILFH3YP"
     },
     {
-      title: "🤖 Premium",
+      title: "🏆 PREMIUM",
       name: "Com Assistente IA",
       originalPrice: "R$127",
       discount: "81%",
@@ -66,15 +69,16 @@ export const Pricing = () => {
         "Novas receitas toda semana",
         "Acesso vitalício a todas as atualizações"
       ],
-      buttonText: "🤖 QUERO O PREMIUM",
+      buttonText: "🏆 QUERO O PREMIUM",
       popular: false,
+      mostSold: true,
       bgColor: "bg-white",
       checkoutLink: "https://projeto-013.pay.yampi.com.br/r/N1F382WO02"
     }
   ];
 
   return (
-    <section id="ofertas-planos" className="py-20 px-4 bg-gray-50 relative overflow-hidden">
+    <section id="ofertas" className="py-20 px-4 bg-gray-50 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-orange-300 to-yellow-300 rounded-full blur-3xl"></div>
@@ -107,35 +111,54 @@ export const Pricing = () => {
             >
               <div 
                 className={`relative ${plan.bgColor} rounded-3xl p-8 shadow-2xl border-2 transition-all duration-500 hover:scale-105 hover:shadow-3xl ${
-                  plan.popular ? 'border-orange-400 transform scale-105 shadow-orange-200/50' : 'border-gray-200'
-                } ${plan.popular ? 'ring-4 ring-orange-200/30' : ''}`}
+                  plan.mostSold ? 'border-purple-400 transform scale-110 shadow-purple-200/50 ring-4 ring-purple-200/30' : 
+                  plan.smartChoice ? 'border-orange-400 transform scale-105 shadow-orange-200/50 ring-2 ring-orange-200/20' : 
+                  'border-gray-200'
+                }`}
                 style={{
-                  boxShadow: plan.popular 
+                  boxShadow: plan.mostSold 
+                    ? '0 25px 50px -12px rgba(147, 51, 234, 0.4), 0 0 0 1px rgba(147, 51, 234, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)' 
+                    : plan.smartChoice
                     ? '0 25px 50px -12px rgba(251, 146, 60, 0.25), 0 0 0 1px rgba(251, 146, 60, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)' 
                     : '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
                 }}
               >
-                {/* Sparkle effects */}
-                {plan.popular && (
+                {/* Sparkle effects para mais vendido */}
+                {plan.mostSold && (
                   <>
                     <div className="absolute -top-2 -left-2 w-4 h-4 bg-yellow-400 rounded-full animate-ping"></div>
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-orange-400 rounded-full animate-pulse delay-75"></div>
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-75"></div>
                     <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-pink-400 rounded-full animate-bounce delay-150"></div>
-                    <div className="absolute top-1/2 -right-2 w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-300"></div>
+                    <div className="absolute top-1/2 -right-2 w-3 h-3 bg-gold-400 rounded-full animate-pulse delay-300"></div>
+                    <div className="absolute top-1/4 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-200"></div>
                   </>
                 )}
 
-                {/* Ribbon for popular plan */}
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg relative">
-                      <span className="relative z-10">🔥 MAIS VENDIDO 🔥</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 rounded-full blur opacity-75"></div>
+                {/* Faixa para oferta inteligente */}
+                {plan.smartChoice && (
+                  <div className="absolute -top-3 -right-3 z-10">
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg transform rotate-12">
+                      A OFERTA MAIS INTELIGENTE
                     </div>
                   </div>
                 )}
 
-                <div className="text-center mb-8">
+                {/* Badge de mais vendido */}
+                {plan.mostSold && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white px-8 py-3 rounded-full text-sm font-black shadow-2xl relative overflow-hidden">
+                      <span className="relative z-10 flex items-center gap-2">
+                        <span className="text-yellow-300">🏆</span>
+                        MAIS VENDIDO
+                        <span className="text-yellow-300">🏆</span>
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-pink-700 to-red-700 rounded-full blur opacity-75"></div>
+                      <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="text-center mb-8 mt-4">
                   <p className="text-sm font-bold text-orange-600 mb-2">{plan.title}</p>
                   <h3 className="text-xl font-bold text-gray-800 mb-6">{plan.name}</h3>
                   
@@ -146,9 +169,12 @@ export const Pricing = () => {
                         -{plan.discount}
                       </span>
                     </div>
-                    <div className="text-4xl font-black text-gray-800 mb-1 relative">
+                    <div className={`text-4xl font-black text-gray-800 mb-1 relative ${plan.mostSold ? 'text-5xl' : ''}`}>
                       {plan.price}
-                      {plan.popular && (
+                      {plan.mostSold && (
+                        <div className="absolute -inset-6 bg-gradient-to-r from-purple-200 to-pink-200 rounded-lg blur-lg opacity-40 -z-10"></div>
+                      )}
+                      {plan.smartChoice && (
                         <div className="absolute -inset-4 bg-gradient-to-r from-orange-200 to-yellow-200 rounded-lg blur-lg opacity-30 -z-10"></div>
                       )}
                     </div>
@@ -168,7 +194,9 @@ export const Pricing = () => {
                 <Button 
                   asChild
                   className={`w-full py-4 text-lg font-bold rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl ${
-                    plan.popular 
+                    plan.mostSold 
+                      ? 'bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 hover:from-purple-700 hover:via-pink-700 hover:to-red-700 text-white transform hover:scale-105 text-xl py-5' 
+                      : plan.smartChoice
                       ? 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:from-orange-600 hover:via-red-600 hover:to-pink-600 text-white transform hover:scale-105' 
                       : 'bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white hover:scale-105'
                   }`}
@@ -178,9 +206,14 @@ export const Pricing = () => {
                   </a>
                 </Button>
 
-                {/* Glow effect for popular plan */}
-                {plan.popular && (
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-orange-400/20 to-pink-400/20 blur-xl -z-10"></div>
+                {/* Glow effect para mais vendido */}
+                {plan.mostSold && (
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-400/30 to-pink-400/30 blur-xl -z-10"></div>
+                )}
+
+                {/* Glow effect para oferta inteligente */}
+                {plan.smartChoice && (
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-orange-400/20 to-yellow-400/20 blur-xl -z-10"></div>
                 )}
               </div>
             </ScrollAnimation>

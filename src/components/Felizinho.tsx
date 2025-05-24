@@ -22,6 +22,13 @@ export const Felizinho = () => {
     }
   ];
 
+  const handleOfertasClick = () => {
+    const element = document.querySelector('#ofertas');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
@@ -48,9 +55,10 @@ export const Felizinho = () => {
           <div className="text-center">
             <Button 
               size="lg"
+              onClick={handleOfertasClick}
               className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              💬 QUERO O FELIZINHO NO MEU WHATSAPP
+              🤖 QUERO O FELIZINHO NO MEU WHATSAPP
             </Button>
           </div>
         </div>
