@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Check, Clock } from "lucide-react";
 
@@ -71,7 +70,7 @@ export const Pricing = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section id="ofertas-planos" className="py-20 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">

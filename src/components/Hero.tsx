@@ -1,8 +1,14 @@
-
 import { Button } from "@/components/ui/button";
 import { Play, ArrowDown, Sparkles } from "lucide-react";
 
 export const Hero = () => {
+  const handleScrollToPricing = () => {
+    const pricingSection = document.getElementById('ofertas-planos');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden bg-gradient-to-br from-orange-50 via-yellow-50 to-pink-50">
       {/* Background decorations */}
@@ -60,6 +66,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 px-12 rounded-full text-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              onClick={handleScrollToPricing}
             >
               🛒 QUERO AS RECEITAS AGORA!
             </Button>

@@ -7,37 +7,37 @@ export const Recipes = () => {
       title: "Mini Panquecas Divertidas",
       description: "Panquecas com gotinhas de chocolate que encantam as crianças!",
       time: "7 min",
-      image: "/lovable-uploads/107cd1da-f125-4bb0-9d0b-9bad27e64610.png"
+      image: "/lovable-uploads/03ac8601-6955-42b4-9e3d-8d58d2f5fbf3.png" // Updated image
     },
     {
       title: "Bolinhos de Espinafre",
       description: "Petiscos nutritivos que fazem as crianças comerem legumes sem perceber",
       time: "7 min",
-      image: "/lovable-uploads/a510428f-0e80-46fd-9b3b-4088e1754966.png"
+      image: "/lovable-uploads/284af897-71a7-45af-981c-ab6056014bdb.png" // Updated image
     },
     {
       title: "Barras de Cereal Caseiras",
       description: "Nutritivas e saborosas, feitas com ingredientes naturais",
       time: "7 min",
-      image: "/lovable-uploads/79ac834a-0cbc-4f1e-b1d4-7ce8b9384a96.png"
+      image: "/lovable-uploads/79ac834a-0cbc-4f1e-b1d4-7ce8b9384a96.png" // Kept original image
     },
     {
       title: "Pãezinhos Monstrinhos",
       description: "Pãezinhos recheados com chocolate que as crianças adoram abrir e comer",
       time: "7 min",
-      image: "/lovable-uploads/bf92bc53-8ffe-4c09-ab08-5d343098a4d3.png"
+      image: "/lovable-uploads/293b7e77-09af-427f-be1e-a38894032de8.png" // Updated image
     },
     {
       title: "Cookies de Aveia e Morango",
       description: "Cookies saudáveis feitos com aveia, morango e gotinhas de chocolate",
       time: "7 min",
-      image: "/lovable-uploads/cc05cb91-402f-4ce3-8c29-c7e8ece34bd5.png"
+      image: "/lovable-uploads/a2a217d8-fd36-4174-aec7-9fddbda23bec.png" // Updated image
     },
     {
       title: "Copinhos de Limão com Iogurte",
       description: "Sobremesa refrescante e saudável que as crianças adoram",
       time: "7 min",
-      image: "/lovable-uploads/f4e17b38-385a-4bea-b98b-7820f19e6ec1.png"
+      image: "/lovable-uploads/f4e17b38-385a-4bea-b98b-7820f19e6ec1.png" // Kept original image
     }
   ];
 
@@ -86,3 +86,4 @@ export const Recipes = () => {
     </section>
   );
 };
+
