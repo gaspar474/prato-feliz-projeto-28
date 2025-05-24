@@ -1,4 +1,3 @@
-
 import { Clock, Star } from "lucide-react";
 
 export const Recipes = () => {
@@ -7,37 +6,37 @@ export const Recipes = () => {
       title: "Mini Panquecas Divertidas",
       description: "Panquecas com gotinhas de chocolate que encantam as crianças!",
       time: "7 min",
-      image: "/lovable-uploads/03ac8601-6955-42b4-9e3d-8d58d2f5fbf3.png" // Updated image
+      image: "/lovable-uploads/03ac8601-6955-42b4-9e3d-8d58d2f5fbf3.png"
     },
     {
       title: "Bolinhos de Espinafre",
       description: "Petiscos nutritivos que fazem as crianças comerem legumes sem perceber",
       time: "7 min",
-      image: "/lovable-uploads/284af897-71a7-45af-981c-ab6056014bdb.png" // Updated image
+      image: "/lovable-uploads/284af897-71a7-45af-981c-ab6056014bdb.png"
     },
     {
       title: "Barras de Cereal Caseiras",
       description: "Nutritivas e saborosas, feitas com ingredientes naturais",
       time: "7 min",
-      image: "/lovable-uploads/79ac834a-0cbc-4f1e-b1d4-7ce8b9384a96.png" // Kept original image
+      image: "/lovable-uploads/79ac834a-0cbc-4f1e-b1d4-7ce8b9384a96.png"
     },
     {
       title: "Pãezinhos Monstrinhos",
       description: "Pãezinhos recheados com chocolate que as crianças adoram abrir e comer",
       time: "7 min",
-      image: "/lovable-uploads/293b7e77-09af-427f-be1e-a38894032de8.png" // Updated image
+      image: "/lovable-uploads/293b7e77-09af-427f-be1e-a38894032de8.png"
     },
     {
       title: "Cookies de Aveia e Morango",
       description: "Cookies saudáveis feitos com aveia, morango e gotinhas de chocolate",
       time: "7 min",
-      image: "/lovable-uploads/a2a217d8-fd36-4174-aec7-9fddbda23bec.png" // Updated image
+      image: "/lovable-uploads/a2a217d8-fd36-4174-aec7-9fddbda23bec.png"
     },
     {
       title: "Copinhos de Limão com Iogurte",
       description: "Sobremesa refrescante e saudável que as crianças adoram",
       time: "7 min",
-      image: "/lovable-uploads/f4e17b38-385a-4bea-b98b-7820f19e6ec1.png" // Kept original image
+      image: "/lovable-uploads/f4e17b38-385a-4bea-b98b-7820f19e6ec1.png"
     }
   ];
 
@@ -59,11 +58,11 @@ export const Recipes = () => {
               key={index}
               className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
             >
-              <div className="w-full h-48 mb-4 rounded-2xl overflow-hidden">
+              <div className="w-full h-48 mb-4 rounded-2xl overflow-hidden bg-gray-100">
                 <img 
                   src={recipe.image} 
                   alt={recipe.title}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full ${recipe.title === "Pãezinhos Monstrinhos" ? "object-contain" : "object-cover"}`}
                 />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">{recipe.title}</h3>
@@ -86,4 +85,3 @@ export const Recipes = () => {
     </section>
   );
 };
-

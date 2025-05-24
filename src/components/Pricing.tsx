@@ -20,12 +20,13 @@ export const Pricing = () => {
       ],
       buttonText: "🛒 QUERO O KIT BÁSICO",
       popular: false,
-      bgColor: "bg-white"
+      bgColor: "bg-white",
+      checkoutLink: "https://projeto-013.pay.yampi.com.br/r/AFR0HSFH6V"
     },
     {
       title: "⭐ MAIS VENDIDO",
       name: "Super Kit Completo",
-      originalPrice: "R$147",
+      originalPrice: "R$127",
       discount: "89%",
       price: "R$17",
       period: "pagamento único",
@@ -43,14 +44,15 @@ export const Pricing = () => {
       ],
       buttonText: "⭐ QUERO O SUPER KIT",
       popular: true,
-      bgColor: "bg-gradient-to-br from-orange-50 to-yellow-50"
+      bgColor: "bg-gradient-to-br from-orange-50 to-yellow-50",
+      checkoutLink: "https://projeto-013.pay.yampi.com.br/r/21SILFH3YP"
     },
     {
       title: "🤖 Premium",
       name: "Com Assistente IA",
-      originalPrice: "R$197",
+      originalPrice: "R$127",
       discount: "81%",
-      price: "R$37",
+      price: "R$27",
       period: "pagamento único",
       features: [
         "Tudo do Super Kit +",
@@ -65,7 +67,8 @@ export const Pricing = () => {
       ],
       buttonText: "🤖 QUERO O PREMIUM",
       popular: false,
-      bgColor: "bg-white"
+      bgColor: "bg-white",
+      checkoutLink: "https://projeto-013.pay.yampi.com.br/r/N1F382WO02"
     }
   ];
 
@@ -130,13 +133,16 @@ export const Pricing = () => {
               </div>
 
               <Button 
+                asChild
                 className={`w-full py-4 text-lg font-bold rounded-2xl transition-all duration-300 ${
                   plan.popular 
                     ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white' 
                     : 'bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white'
                 }`}
               >
-                {plan.buttonText}
+                <a href={plan.checkoutLink} target="_blank" rel="noopener noreferrer">
+                  {plan.buttonText}
+                </a>
               </Button>
             </div>
           ))}
