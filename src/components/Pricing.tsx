@@ -111,71 +111,74 @@ export const Pricing = () => {
             >
               <div 
                 className={`relative ${plan.bgColor} rounded-3xl p-8 shadow-2xl border-2 transition-all duration-500 hover:scale-105 hover:shadow-3xl overflow-hidden ${
-                  plan.mostSold ? 'border-purple-400 transform scale-110 shadow-purple-200/50 ring-4 ring-purple-200/30' : 
-                  plan.smartChoice ? 'border-orange-400 transform scale-105 shadow-orange-200/50 ring-2 ring-orange-200/20' : 
+                  plan.mostSold ? 'border-purple-500 transform scale-110 shadow-purple-300/60 ring-8 ring-purple-300/40' : 
+                  plan.smartChoice ? 'border-orange-500 transform scale-105 shadow-orange-300/60 ring-6 ring-orange-300/30' : 
                   'border-gray-200'
                 }`}
                 style={{
                   boxShadow: plan.mostSold 
-                    ? '0 25px 50px -12px rgba(147, 51, 234, 0.4), 0 0 0 1px rgba(147, 51, 234, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)' 
+                    ? '0 35px 80px -12px rgba(147, 51, 234, 0.6), 0 0 0 1px rgba(147, 51, 234, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 0 60px rgba(147, 51, 234, 0.3)' 
                     : plan.smartChoice
-                    ? '0 25px 50px -12px rgba(251, 146, 60, 0.25), 0 0 0 1px rgba(251, 146, 60, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)' 
+                    ? '0 35px 80px -12px rgba(251, 146, 60, 0.5), 0 0 0 1px rgba(251, 146, 60, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 0 60px rgba(251, 146, 60, 0.3)' 
                     : '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
                 }}
               >
-                {/* Sparkle effects para mais vendido */}
+                {/* Enhanced sparkle effects para mais vendido */}
                 {plan.mostSold && (
                   <>
-                    <div className="absolute top-2 left-2 w-4 h-4 bg-yellow-400 rounded-full animate-ping"></div>
-                    <div className="absolute top-2 right-2 w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-75"></div>
-                    <div className="absolute bottom-2 left-2 w-2 h-2 bg-pink-400 rounded-full animate-bounce delay-150"></div>
-                    <div className="absolute top-1/2 right-2 w-3 h-3 bg-gold-400 rounded-full animate-pulse delay-300"></div>
-                    <div className="absolute top-1/4 left-2 w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-200"></div>
+                    <div className="absolute top-2 left-2 w-4 h-4 bg-gradient-to-r from-yellow-400 to-gold-400 rounded-full animate-ping shadow-lg"></div>
+                    <div className="absolute top-2 right-2 w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse delay-75 shadow-lg"></div>
+                    <div className="absolute bottom-2 left-2 w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full animate-bounce delay-150 shadow-lg"></div>
+                    <div className="absolute top-1/2 right-2 w-3 h-3 bg-gradient-to-r from-gold-400 to-yellow-400 rounded-full animate-pulse delay-300 shadow-lg"></div>
+                    <div className="absolute top-1/4 left-2 w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-bounce delay-200 shadow-lg"></div>
+                    <div className="absolute bottom-1/4 right-4 w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-ping delay-400 shadow-lg"></div>
                   </>
                 )}
 
-                {/* Faixa para oferta inteligente - dentro do card */}
+                {/* Enhanced sparkle effects para oferta inteligente */}
                 {plan.smartChoice && (
-                  <div className="absolute top-4 right-4 z-10">
-                    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg transform rotate-12">
-                      A OFERTA MAIS INTELIGENTE
-                    </div>
-                  </div>
-                )}
-
-                {/* Badge de mais vendido - dentro do card */}
-                {plan.mostSold && (
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white px-6 py-2 rounded-full text-sm font-black shadow-2xl relative overflow-hidden">
-                      <span className="relative z-10 flex items-center gap-2">
-                        <span className="text-yellow-300">🏆</span>
-                        MAIS VENDIDO
-                        <span className="text-yellow-300">🏆</span>
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-pink-700 to-red-700 rounded-full blur opacity-75"></div>
-                      <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse"></div>
-                    </div>
-                  </div>
+                  <>
+                    <div className="absolute top-4 left-4 w-3 h-3 bg-gradient-to-r from-orange-400 to-red-400 rounded-full animate-ping shadow-lg"></div>
+                    <div className="absolute top-4 right-4 w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse delay-100 shadow-lg"></div>
+                    <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-r from-red-400 to-pink-400 rounded-full animate-bounce delay-200 shadow-lg"></div>
+                    <div className="absolute bottom-4 right-4 w-3 h-3 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full animate-pulse delay-300 shadow-lg"></div>
+                  </>
                 )}
 
                 <div className="text-center mb-8 mt-8">
-                  <p className="text-sm font-bold text-orange-600 mb-2">{plan.title}</p>
-                  <h3 className="text-xl font-bold text-gray-800 mb-6">{plan.name}</h3>
+                  <p className={`text-sm font-black mb-2 ${
+                    plan.mostSold ? 'text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-lg' :
+                    plan.smartChoice ? 'text-transparent bg-gradient-to-r from-orange-600 via-red-600 to-orange-700 bg-clip-text text-lg' :
+                    'text-orange-600'
+                  }`}>{plan.title}</p>
+                  <h3 className={`text-xl font-bold mb-6 ${
+                    plan.mostSold ? 'text-transparent bg-gradient-to-r from-purple-800 via-pink-800 to-red-800 bg-clip-text text-2xl' :
+                    plan.smartChoice ? 'text-transparent bg-gradient-to-r from-orange-800 via-red-800 to-orange-900 bg-clip-text text-2xl' :
+                    'text-gray-800'
+                  }`}>{plan.name}</h3>
                   
                   <div className="mb-6">
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <span className="text-lg text-gray-400 line-through">De {plan.originalPrice}</span>
-                      <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-bounce">
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-bounce ${
+                        plan.mostSold ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' :
+                        plan.smartChoice ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white' :
+                        'bg-red-500 text-white'
+                      }`}>
                         -{plan.discount}
                       </span>
                     </div>
-                    <div className={`text-4xl font-black text-gray-800 mb-1 relative ${plan.mostSold ? 'text-5xl' : ''}`}>
+                    <div className={`text-4xl font-black mb-1 relative ${
+                      plan.mostSold ? 'text-5xl text-transparent bg-gradient-to-r from-purple-700 via-pink-700 to-red-700 bg-clip-text' : 
+                      plan.smartChoice ? 'text-5xl text-transparent bg-gradient-to-r from-orange-700 via-red-700 to-orange-800 bg-clip-text' :
+                      'text-gray-800'
+                    }`}>
                       {plan.price}
                       {plan.mostSold && (
-                        <div className="absolute -inset-6 bg-gradient-to-r from-purple-200 to-pink-200 rounded-lg blur-lg opacity-40 -z-10"></div>
+                        <div className="absolute -inset-8 bg-gradient-to-r from-purple-200 via-pink-200 to-red-200 rounded-xl blur-xl opacity-50 -z-10 animate-pulse"></div>
                       )}
                       {plan.smartChoice && (
-                        <div className="absolute -inset-4 bg-gradient-to-r from-orange-200 to-yellow-200 rounded-lg blur-lg opacity-30 -z-10"></div>
+                        <div className="absolute -inset-6 bg-gradient-to-r from-orange-200 via-yellow-200 to-red-200 rounded-xl blur-xl opacity-40 -z-10 animate-pulse"></div>
                       )}
                     </div>
                     <p className="text-sm text-gray-500">{plan.period}</p>
@@ -195,9 +198,9 @@ export const Pricing = () => {
                   asChild
                   className={`w-full py-4 text-lg font-bold rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl ${
                     plan.mostSold 
-                      ? 'bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 hover:from-purple-700 hover:via-pink-700 hover:to-red-700 text-white transform hover:scale-105 text-xl py-5' 
+                      ? 'bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 hover:from-purple-700 hover:via-pink-700 hover:to-red-700 text-white transform hover:scale-105 text-xl py-5 shadow-2xl shadow-purple-500/40 hover:shadow-purple-500/60' 
                       : plan.smartChoice
-                      ? 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:from-orange-600 hover:via-red-600 hover:to-pink-600 text-white transform hover:scale-105' 
+                      ? 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:from-orange-600 hover:via-red-600 hover:to-pink-600 text-white transform hover:scale-105 shadow-2xl shadow-orange-500/40 hover:shadow-orange-500/60' 
                       : 'bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white hover:scale-105'
                   }`}
                 >
@@ -206,14 +209,20 @@ export const Pricing = () => {
                   </a>
                 </Button>
 
-                {/* Glow effect para mais vendido */}
+                {/* Enhanced glow effect para mais vendido */}
                 {plan.mostSold && (
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-400/30 to-pink-400/30 blur-xl -z-10"></div>
+                  <>
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-400/40 to-pink-400/40 blur-2xl -z-10 animate-pulse"></div>
+                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-purple-300/20 to-pink-300/20 blur-3xl -z-20"></div>
+                  </>
                 )}
 
-                {/* Glow effect para oferta inteligente */}
+                {/* Enhanced glow effect para oferta inteligente */}
                 {plan.smartChoice && (
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-orange-400/20 to-yellow-400/20 blur-xl -z-10"></div>
+                  <>
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-orange-400/30 to-yellow-400/30 blur-2xl -z-10 animate-pulse"></div>
+                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-orange-300/15 to-yellow-300/15 blur-3xl -z-20"></div>
+                  </>
                 )}
               </div>
             </ScrollAnimation>
