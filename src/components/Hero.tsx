@@ -25,17 +25,14 @@ export const Hero = () => {
         <ScrollAnimation animation="fade-up">
           <div className="mb-12">
             {/* Logo Section */}
-            <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="flex items-center justify-center mb-8">
               <div className="relative">
                 <img 
                   src="/lovable-uploads/61282aeb-d0f4-4c64-8de0-933d1afbdd0f.png" 
                   alt="Prato Alegre Logo" 
-                  className="w-20 h-20 object-contain"
+                  className="w-24 h-24 object-contain"
                 />
               </div>
-              <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-pink-500 via-blue-400 to-pink-600 bg-clip-text text-transparent">
-                Prato Alegre
-              </h1>
             </div>
           </div>
         </ScrollAnimation>
