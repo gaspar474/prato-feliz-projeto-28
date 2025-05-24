@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Star, Instagram, ArrowLeft, ArrowRight } from "lucide-react";
 import {
@@ -59,7 +58,7 @@ export const Testimonials = () => {
     if (!api) {
       return;
     }
-    setCount(api.scrollSnaps().length);
+    setCount(api.scrollSnapList().length); 
     setCurrent(api.selectedScrollSnap());
 
     api.on("select", () => {
