@@ -110,7 +110,7 @@ export const Pricing = () => {
               delay={index * 200}
             >
               <div 
-                className={`relative ${plan.bgColor} rounded-3xl p-8 shadow-2xl border-2 transition-all duration-500 hover:scale-105 hover:shadow-3xl ${
+                className={`relative ${plan.bgColor} rounded-3xl p-8 shadow-2xl border-2 transition-all duration-500 hover:scale-105 hover:shadow-3xl overflow-hidden ${
                   plan.mostSold ? 'border-purple-400 transform scale-110 shadow-purple-200/50 ring-4 ring-purple-200/30' : 
                   plan.smartChoice ? 'border-orange-400 transform scale-105 shadow-orange-200/50 ring-2 ring-orange-200/20' : 
                   'border-gray-200'
@@ -126,27 +126,27 @@ export const Pricing = () => {
                 {/* Sparkle effects para mais vendido */}
                 {plan.mostSold && (
                   <>
-                    <div className="absolute -top-2 -left-2 w-4 h-4 bg-yellow-400 rounded-full animate-ping"></div>
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-75"></div>
-                    <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-pink-400 rounded-full animate-bounce delay-150"></div>
-                    <div className="absolute top-1/2 -right-2 w-3 h-3 bg-gold-400 rounded-full animate-pulse delay-300"></div>
-                    <div className="absolute top-1/4 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-200"></div>
+                    <div className="absolute top-2 left-2 w-4 h-4 bg-yellow-400 rounded-full animate-ping"></div>
+                    <div className="absolute top-2 right-2 w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-75"></div>
+                    <div className="absolute bottom-2 left-2 w-2 h-2 bg-pink-400 rounded-full animate-bounce delay-150"></div>
+                    <div className="absolute top-1/2 right-2 w-3 h-3 bg-gold-400 rounded-full animate-pulse delay-300"></div>
+                    <div className="absolute top-1/4 left-2 w-2 h-2 bg-blue-400 rounded-full animate-bounce delay-200"></div>
                   </>
                 )}
 
-                {/* Faixa para oferta inteligente */}
+                {/* Faixa para oferta inteligente - dentro do card */}
                 {plan.smartChoice && (
-                  <div className="absolute -top-3 -right-3 z-10">
-                    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg transform rotate-12">
+                  <div className="absolute top-4 right-4 z-10">
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg transform rotate-12">
                       A OFERTA MAIS INTELIGENTE
                     </div>
                   </div>
                 )}
 
-                {/* Badge de mais vendido */}
+                {/* Badge de mais vendido - dentro do card */}
                 {plan.mostSold && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white px-8 py-3 rounded-full text-sm font-black shadow-2xl relative overflow-hidden">
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white px-6 py-2 rounded-full text-sm font-black shadow-2xl relative overflow-hidden">
                       <span className="relative z-10 flex items-center gap-2">
                         <span className="text-yellow-300">🏆</span>
                         MAIS VENDIDO
@@ -158,7 +158,7 @@ export const Pricing = () => {
                   </div>
                 )}
 
-                <div className="text-center mb-8 mt-4">
+                <div className="text-center mb-8 mt-8">
                   <p className="text-sm font-bold text-orange-600 mb-2">{plan.title}</p>
                   <h3 className="text-xl font-bold text-gray-800 mb-6">{plan.name}</h3>
                   
