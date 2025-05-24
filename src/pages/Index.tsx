@@ -1,6 +1,5 @@
 
 import { Hero } from "@/components/Hero";
-import { HelpBar } from "@/components/HelpBar";
 import { lazy, Suspense } from "react";
 
 // Lazy load components que não são críticos para o primeiro carregamento
@@ -23,7 +22,6 @@ const LoadingFallback = () => <div className="w-full h-32" />;
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <HelpBar />
       <Hero />
       <Suspense fallback={<LoadingFallback />}>
         <Benefits />
