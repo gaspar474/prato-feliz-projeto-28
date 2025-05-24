@@ -15,17 +15,13 @@ export const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <ScrollAnimation animation="fade-up">
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 via-red-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-2xl">🍴</span>
-                </div>
-                <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
-                  <span className="text-xs">✨</span>
-                </div>
-              </div>
+            <div className="flex items-center justify-center mb-4">
+              <img 
+                src="/lovable-uploads/61282aeb-d0f4-4c64-8de0-933d1afbdd0f.png" 
+                alt="Prato Alegre Logo" 
+                className="w-16 h-16 object-contain"
+              />
             </div>
-            <h2 className="text-4xl font-bold mb-4">Comida Alegre</h2>
             <p className="text-xl text-orange-200">
               Transformando a alimentação infantil em momentos felizes e saudáveis.
             </p>
@@ -70,7 +66,7 @@ export const Footer = () => {
         <ScrollAnimation animation="fade-up" delay={400}>
           <div className="border-t border-orange-700 pt-8 text-center">
             <p className="text-orange-200">
-              © 2025 Comida Alegre. Todos os direitos reservados.
+              © 2025 Prato Alegre. Todos os direitos reservados.
             </p>
           </div>
         </ScrollAnimation>

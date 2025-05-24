@@ -30,7 +30,7 @@ export const WhatYouGet = () => {
       <div className="max-w-6xl mx-auto">
         <ScrollAnimation animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
               ✨ O Que Você Recebe 🎁
             </h2>
             <p className="text-xl text-orange-700">

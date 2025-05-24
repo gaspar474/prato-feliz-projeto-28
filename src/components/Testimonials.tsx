@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Instagram, ArrowLeft, ArrowRight } from "lucide-react";
 import {
@@ -8,12 +9,6 @@ import {
   CarouselNext,
   type CarouselApi,
 } from "@/components/ui/carousel";
-
-const ComidaAlegreLogoPlaceholder = () => (
-  <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-semibold shadow-sm">
-    CA
-  </div>
-);
 
 export const Testimonials = () => {
   const stats = [
@@ -101,11 +96,15 @@ export const Testimonials = () => {
                     <h4 className="font-bold text-md mb-1 text-gray-900">{testimonial.user.username}</h4>
                     <p className="text-gray-700 text-sm mb-4 leading-relaxed">{testimonial.text}</p>
                     
-                    {/* Comida Alegre Reply */}
+                    {/* Prato Alegre Reply */}
                     <div className="bg-gray-50 p-3 rounded-lg shadow-inner">
                       <div className="flex items-center gap-2 mb-1">
-                        <ComidaAlegreLogoPlaceholder />
-                        <span className="font-semibold text-xs text-gray-800">Comida Alegre</span>
+                        <img 
+                          src="/lovable-uploads/61282aeb-d0f4-4c64-8de0-933d1afbdd0f.png" 
+                          alt="Prato Alegre Logo" 
+                          className="w-6 h-6 object-contain"
+                        />
+                        <span className="font-semibold text-xs text-gray-800">Prato Alegre</span>
                       </div>
                       <p className="text-xs text-gray-600 leading-snug">{testimonial.pratoFelizReply.text}</p>
                     </div>
