@@ -9,6 +9,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import React from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 export const WhatYouGet = () => {
   const features = [
@@ -48,6 +49,10 @@ export const WhatYouGet = () => {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
   React.useEffect(() => {
     if (!api) {
       return;
@@ -65,18 +70,36 @@ export const WhatYouGet = () => {
       <div className="max-w-6xl mx-auto">
         <ScrollAnimation animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-              ✨ O Que Você Recebe 🎁
-            </h2>
-            <p className="text-xl text-blue-700">
-              Transforme a alimentação da sua família com nosso pacote completo
-            </p>
+            <div className="relative inline-block">
+              <div className="absolute -inset-2 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 rounded-lg blur opacity-20 animate-pulse"></div>
+              <h2 className="relative text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 px-4 py-2">
+                ✨ O Que Você Recebe 🎁
+              </h2>
+            </div>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-blue-700 font-semibold mb-2">
+                Transforme a alimentação da sua família
+              </p>
+              <p className="text-lg text-blue-600">
+                com nosso <span className="text-purple-600 font-bold">pacote completo</span> e exclusivo
+              </p>
+            </div>
+            
+            {/* Decorative elements around headline */}
+            <div className="flex justify-center items-center gap-4 mt-6">
+              <div className="w-20 h-0.5 bg-gradient-to-r from-transparent to-purple-400"></div>
+              <div className="w-3 h-3 bg-purple-400 rounded-full animate-bounce"></div>
+              <div className="w-3 h-3 bg-pink-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+              <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              <div className="w-20 h-0.5 bg-gradient-to-l from-transparent to-blue-400"></div>
+            </div>
           </div>
         </ScrollAnimation>
 
         <ScrollAnimation animation="scale-up" delay={300}>
           <div className="relative">
             <Carousel
+              plugins={[plugin.current]}
               opts={{ 
                 loop: true, 
                 align: "center",
@@ -84,6 +107,8 @@ export const WhatYouGet = () => {
               }}
               setApi={setApi}
               className="w-full max-w-5xl mx-auto"
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {features.map((feature, index) => (
