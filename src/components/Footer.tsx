@@ -11,7 +11,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="py-16 px-4 bg-gradient-to-r from-orange-800 to-red-800 text-white">
+    <footer className="py-16 px-4 bg-gradient-to-r from-blue-800 to-indigo-800 text-white">
       <div className="max-w-6xl mx-auto">
         <ScrollAnimation animation="fade-up">
           <div className="text-center mb-12">
@@ -22,7 +22,7 @@ export const Footer = () => {
                 className="w-16 h-16 object-contain"
               />
             </div>
-            <p className="text-xl text-orange-200">
+            <p className="text-xl text-blue-200">
               Transformando a alimentação infantil em momentos felizes e saudáveis.
             </p>
           </div>
@@ -37,7 +37,7 @@ export const Footer = () => {
                   <div key={index}>
                     <a 
                       href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-orange-200 hover:text-white transition-colors duration-300"
+                      className="text-blue-200 hover:text-white transition-colors duration-300"
                     >
                       {link}
                     </a>
@@ -54,7 +54,7 @@ export const Footer = () => {
                 <span className="text-xl">📧</span>
                 <a 
                   href="mailto:suporteplataformaplus@gmail.com"
-                  className="text-orange-200 hover:text-white transition-colors duration-300"
+                  className="text-blue-200 hover:text-white transition-colors duration-300"
                 >
                   suporteplataformaplus@gmail.com 
                 </a>
@@ -64,8 +64,8 @@ export const Footer = () => {
         </div>
 
         <ScrollAnimation animation="fade-up" delay={400}>
-          <div className="border-t border-orange-700 pt-8 text-center">
-            <p className="text-orange-200">
+          <div className="border-t border-blue-700 pt-8 text-center">
+            <p className="text-blue-200">
               © 2025 Prato Alegre. Todos os direitos reservados.
             </p>
           </div>
