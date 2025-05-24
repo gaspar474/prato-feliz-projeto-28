@@ -32,7 +32,7 @@ export const Hero = () => {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-              Prato Feliz
+              Comida Alegre
             </h1>
           </div>
           
@@ -55,7 +55,7 @@ export const Hero = () => {
               <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
                 <Play className="w-6 h-6 text-white ml-1" />
               </div>
-              <span className="text-lg font-semibold text-gray-700">Receitas do Prato Feliz</span>
+              <span className="text-lg font-semibold text-gray-700">Receitas da Comida Alegre</span>
             </div>
             
             <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-8">

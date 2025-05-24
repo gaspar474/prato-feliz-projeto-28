@@ -1,5 +1,5 @@
 import React from "react";
-import { Star, Instagram, ArrowLeft, ArrowRight } from "lucide-react";
+import { Instagram, ArrowLeft, ArrowRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -7,11 +7,11 @@ import {
   CarouselPrevious,
   CarouselNext,
   type CarouselApi,
-} from "@/components/ui/carousel"; // Ensure this path is correct
+} from "@/components/ui/carousel";
 
-const PratoFelizLogoPlaceholder = () => (
+const ComidaAlegreLogoPlaceholder = () => (
   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-semibold shadow-sm">
-    PF
+    CA
   </div>
 );
 
@@ -81,7 +81,7 @@ export const Testimonials = () => {
         <Carousel
           opts={{ loop: true, align: "center" }}
           setApi={setApi}
-          className="w-full max-w-sm md:max-w-md mx-auto" // Adjusted max-width
+          className="w-full max-w-sm md:max-w-md mx-auto"
         >
           <CarouselContent>
             {testimonialsData.map((testimonial, index) => (
@@ -101,11 +101,11 @@ export const Testimonials = () => {
                     <h4 className="font-bold text-md mb-1 text-gray-900">{testimonial.user.username}</h4>
                     <p className="text-gray-700 text-sm mb-4 leading-relaxed">{testimonial.text}</p>
                     
-                    {/* Prato Feliz Reply */}
+                    {/* Comida Alegre Reply */}
                     <div className="bg-gray-50 p-3 rounded-lg shadow-inner">
                       <div className="flex items-center gap-2 mb-1">
-                        <PratoFelizLogoPlaceholder />
-                        <span className="font-semibold text-xs text-gray-800">Prato Feliz</span>
+                        <ComidaAlegreLogoPlaceholder />
+                        <span className="font-semibold text-xs text-gray-800">Comida Alegre</span>
                       </div>
                       <p className="text-xs text-gray-600 leading-snug">{testimonial.pratoFelizReply.text}</p>
                     </div>

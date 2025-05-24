@@ -1,4 +1,3 @@
-
 import { Mail, Utensils, Sparkles } from "lucide-react";
 
 export const Footer = () => {
@@ -24,7 +23,7 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <h2 className="text-4xl font-bold mb-4">Prato Feliz</h2>
+          <h2 className="text-4xl font-bold mb-4">Comida Alegre</h2>
           <p className="text-xl text-purple-200">
             Transformando a alimentação infantil em momentos felizes e saudáveis.
           </p>
@@ -55,7 +54,7 @@ export const Footer = () => {
                 href="mailto:contato@pratofeliz.com"
                 className="text-purple-200 hover:text-white transition-colors duration-300"
               >
-                contato@pratofeliz.com
+                contato@pratofeliz.com 
               </a>
             </div>
           </div>
@@ -63,7 +62,7 @@ export const Footer = () => {
 
         <div className="border-t border-purple-700 pt-8 text-center">
           <p className="text-purple-200">
-            © 2025 Prato Feliz. Todos os direitos reservados.
+            © 2025 Comida Alegre. Todos os direitos reservados.
           </p>
         </div>
       </div>
