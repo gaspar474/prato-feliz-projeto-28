@@ -27,15 +27,14 @@ export const Hero = () => {
             {/* Logo Section */}
             <div className="flex items-center justify-center gap-3 mb-8">
               <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-xl">
-                  <span className="text-2xl">🍽️</span>
-                </div>
-                <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="text-xs">✨</span>
-                </div>
+                <img 
+                  src="/lovable-uploads/61282aeb-d0f4-4c64-8de0-933d1afbdd0f.png" 
+                  alt="Prato Alegre Logo" 
+                  className="w-20 h-20 object-contain"
+                />
               </div>
-              <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-orange-600 via-red-500 to-orange-700 bg-clip-text text-transparent">
-                Comida Alegre
+              <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-pink-500 via-blue-400 to-pink-600 bg-clip-text text-transparent">
+                Prato Alegre
               </h1>
             </div>
           </div>
@@ -64,7 +63,7 @@ export const Hero = () => {
                 <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
                   <Play className="w-6 h-6 text-white ml-1" />
                 </div>
-                <span className="text-lg font-semibold text-orange-800">Receitas da Comida Alegre</span>
+                <span className="text-lg font-semibold text-orange-800">Receitas do Prato Alegre</span>
               </div>
               
               <h3 className="text-2xl md:text-4xl font-bold text-orange-800 mb-8">
