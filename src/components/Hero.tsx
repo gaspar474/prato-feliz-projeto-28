@@ -5,7 +5,7 @@ import { ScrollAnimation } from "@/components/ScrollAnimation";
 
 export const Hero = () => {
   const handleScrollToPricing = () => {
-    const pricingSection = document.getElementById('ofertas-planos');
+    const pricingSection = document.getElementById('ofertas');
     if (pricingSection) {
       pricingSection.scrollIntoView({ behavior: 'smooth' });
     }

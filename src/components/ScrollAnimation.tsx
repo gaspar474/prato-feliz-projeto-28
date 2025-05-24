@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useOptimizedIntersectionObserver } from '@/hooks/useOptimizedIntersectionObserver';
 
 interface ScrollAnimationProps {
   children: React.ReactNode;
@@ -15,9 +15,10 @@ export const ScrollAnimation = ({
   animation = 'fade-up',
   delay = 0
 }: ScrollAnimationProps) => {
-  const { elementRef, isIntersecting } = useIntersectionObserver({
+  const { elementRef, isIntersecting } = useOptimizedIntersectionObserver({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
+    rootMargin: '100px'
   });
 
   const getAnimationClasses = () => {
@@ -47,7 +48,10 @@ export const ScrollAnimation = ({
     <div
       ref={elementRef}
       className={`${getAnimationClasses()} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ 
+        transitionDelay: `${delay}ms`,
+        willChange: isIntersecting ? 'auto' : 'transform, opacity'
+      }}
     >
       {children}
     </div>
