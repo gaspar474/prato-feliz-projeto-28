@@ -42,14 +42,22 @@ export const Recipes = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-orange-50 to-red-50">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 bg-gradient-to-br from-orange-50 via-peach-50 to-amber-50 relative overflow-hidden">
+      {/* Elementos decorativos pastéis */}
+      <div className="absolute inset-0 opacity-25">
+        <div className="absolute top-20 left-16 w-36 h-36 bg-gradient-to-br from-orange-200 to-amber-200 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-32 right-20 w-44 h-44 bg-gradient-to-br from-peach-200 to-orange-200 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/4 w-28 h-28 bg-gradient-to-br from-amber-200 to-yellow-200 rounded-3xl rotate-45 blur-xl"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-32 h-32 bg-gradient-to-br from-orange-200 to-red-200 rounded-2xl blur-lg"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <ScrollAnimation animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-orange-800 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
               🥄 Receitas Mágicas ✨
             </h2>
-            <p className="text-xl text-orange-700">
+            <p className="text-xl text-gray-700">
               Pratos divertidos que transformam a hora da refeição em uma experiência incrível
             </p>
           </div>
@@ -62,7 +70,7 @@ export const Recipes = () => {
               animation="fade-up"
               delay={index * 100}
             >
-              <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-orange-100">
+              <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/50">
                 <div className="w-full h-48 mb-4 rounded-2xl overflow-hidden bg-orange-50">
                   <img 
                     src={recipe.image} 
@@ -70,10 +78,10 @@ export const Recipes = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-orange-800 mb-3 text-center">{recipe.title}</h3>
-                <p className="text-orange-700 mb-6 text-center leading-relaxed">{recipe.description}</p>
+                <h3 className="text-xl font-bold text-black mb-3 text-center">{recipe.title}</h3>
+                <p className="text-gray-700 mb-6 text-center leading-relaxed">{recipe.description}</p>
                 
-                <div className="flex items-center justify-between pt-4 border-t border-orange-100">
+                <div className="flex items-center justify-between pt-4 border-t border-orange-200">
                   <div className="flex items-center gap-2 text-green-600">
                     <span className="text-lg">⭐</span>
                     <span className="text-sm font-semibold">Fácil de fazer</span>
