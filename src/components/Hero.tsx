@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Play, ArrowDown, Heart, Sparkles } from "lucide-react";
+import { Play, ArrowDown, Sparkles } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -31,15 +31,15 @@ export const Hero = () => {
           </div>
           
           <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-            Chega de brigas na refeição!
+            Chega de Brigas na Mesa!
           </h2>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-4 font-medium">
-            Seu filho vai amar comer saudável sem reclamações 🥦
+            Seu filho vai amar comer saudável 🥦
           </p>
           
           <p className="text-lg text-gray-500 mb-12">
-            Transforme a alimentação do seu filho em um momento divertido e sem estresse!
+            Receitas práticas, divertidas e nutritivas que fazem qualquer criança pedir bis!
           </p>
         </div>
 
@@ -49,19 +49,19 @@ export const Hero = () => {
               <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
                 <Play className="w-6 h-6 text-white ml-1" />
               </div>
-              <span className="text-lg font-semibold text-gray-700">Prato Feliz - Alimentação Divertida</span>
+              <span className="text-lg font-semibold text-gray-700">Receitas do Prato Feliz</span>
             </div>
             
             <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-8">
               <span className="text-3xl md:text-5xl">40 Receitas</span><br />
-              fáceis e divertidas por apenas <span className="text-green-600">R$10</span>
+              fáceis e testadas por apenas <span className="text-green-600">R$10</span>
             </h3>
             
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 px-12 rounded-full text-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
-              Ver Kits disponíveis
+              🛒 QUERO AS RECEITAS AGORA!
             </Button>
           </div>
         </div>
