@@ -7,37 +7,37 @@ export const Recipes = () => {
       title: "Mini Panquecas Divertidas",
       description: "Panquecas com gotinhas de chocolate que encantam as crianças!",
       time: "7 min",
-      image: "🥞"
+      image: "/lovable-uploads/107cd1da-f125-4bb0-9d0b-9bad27e64610.png"
     },
     {
       title: "Bolinhos de Espinafre",
       description: "Petiscos nutritivos que fazem as crianças comerem legumes sem perceber",
       time: "7 min",
-      image: "🧆"
+      image: "/lovable-uploads/a510428f-0e80-46fd-9b3b-4088e1754966.png"
     },
     {
       title: "Barras de Cereal Caseiras",
       description: "Nutritivas e saborosas, feitas com ingredientes naturais",
       time: "7 min",
-      image: "🍪"
+      image: "/lovable-uploads/79ac834a-0cbc-4f1e-b1d4-7ce8b9384a96.png"
     },
     {
       title: "Pãezinhos Monstrinhos",
       description: "Pãezinhos recheados com chocolate que as crianças adoram abrir e comer",
       time: "7 min",
-      image: "🍞"
+      image: "/lovable-uploads/bf92bc53-8ffe-4c09-ab08-5d343098a4d3.png"
     },
     {
       title: "Cookies de Aveia e Morango",
       description: "Cookies saudáveis feitos com aveia, morango e gotinhas de chocolate",
       time: "7 min",
-      image: "🍓"
+      image: "/lovable-uploads/cc05cb91-402f-4ce3-8c29-c7e8ece34bd5.png"
     },
     {
       title: "Copinhos de Limão com Iogurte",
       description: "Sobremesa refrescante e saudável que as crianças adoram",
       time: "7 min",
-      image: "🍋"
+      image: "/lovable-uploads/f4e17b38-385a-4bea-b98b-7820f19e6ec1.png"
     }
   ];
 
@@ -59,8 +59,12 @@ export const Recipes = () => {
               key={index}
               className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
             >
-              <div className="text-6xl mb-4 text-center">
-                {recipe.image}
+              <div className="w-full h-48 mb-4 rounded-2xl overflow-hidden">
+                <img 
+                  src={recipe.image} 
+                  alt={recipe.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">{recipe.title}</h3>
               <p className="text-gray-600 mb-6 text-center leading-relaxed">{recipe.description}</p>
