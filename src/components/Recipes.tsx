@@ -42,13 +42,13 @@ export const Recipes = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-r from-yellow-50 to-orange-50">
+    <section className="py-20 px-4 bg-gradient-to-br from-yellow-50 to-orange-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             🥄 Receitas Mágicas ✨
           </h2>
-          <p className="text-xl text-gray-700">
+          <p className="text-xl text-gray-600">
             Pratos divertidos que transformam a hora da refeição em uma experiência incrível
           </p>
         </div>
@@ -57,22 +57,22 @@ export const Recipes = () => {
           {recipes.map((recipe, index) => (
             <div 
               key={index}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/20 group"
+              className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
             >
-              <div className="text-6xl mb-4 text-center group-hover:scale-110 transition-transform duration-300">
+              <div className="text-6xl mb-4 text-center">
                 {recipe.image}
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">{recipe.title}</h3>
-              <p className="text-gray-600 mb-4">{recipe.description}</p>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">{recipe.title}</h3>
+              <p className="text-gray-600 mb-6 text-center leading-relaxed">{recipe.description}</p>
               
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-2 text-green-600">
                   <Star className="w-4 h-4" />
-                  <span className="text-sm font-medium">Fácil de fazer</span>
+                  <span className="text-sm font-semibold">Fácil de fazer</span>
                 </div>
                 <div className="flex items-center gap-2 text-blue-600">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm font-medium">{recipe.time}</span>
+                  <span className="text-sm font-semibold">{recipe.time}</span>
                 </div>
               </div>
             </div>

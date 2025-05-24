@@ -18,7 +18,8 @@ export const Pricing = () => {
         "Acesso às novas receitas"
       ],
       buttonText: "GARANTIR AGORA MESMO",
-      popular: false
+      popular: false,
+      bgColor: "bg-white"
     },
     {
       title: "Escolha das Famílias",
@@ -40,7 +41,8 @@ export const Pricing = () => {
         "Acesso ao Felizinho por 7 dias grátis"
       ],
       buttonText: "GARANTIR AGORA MESMO",
-      popular: true
+      popular: true,
+      bgColor: "bg-gradient-to-br from-orange-50 to-yellow-50"
     },
     {
       title: "Solução Completa",
@@ -66,27 +68,28 @@ export const Pricing = () => {
         "Suporte 24 horas com o Felizinho direto no WhatsApp"
       ],
       buttonText: "✨ GARANTIR ACESSO AO FELIZINHO ✨",
-      popular: false
+      popular: false,
+      bgColor: "bg-white"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-r from-purple-50 to-pink-50">
+    <section className="py-20 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             SOLUÇÕES PARA TODAS AS FAMÍLIAS
           </h2>
-          <p className="text-xl text-gray-700 mb-8">
+          <p className="text-xl text-gray-600 mb-8">
             Transforme a Alimentação do Seu Filho Hoje!
           </p>
-          <p className="text-lg text-gray-600 mb-4">
+          <p className="text-lg text-gray-500 mb-8">
             Escolha o plano ideal para acabar com o drama na hora das refeições e garantir uma alimentação saudável e divertida para seu filho
           </p>
           
-          <div className="bg-red-500 text-white px-6 py-3 rounded-full inline-flex items-center gap-2 mb-8">
+          <div className="bg-red-500 text-white px-8 py-4 rounded-full inline-flex items-center gap-3 mb-8 font-bold text-lg">
             <Clock className="w-5 h-5" />
-            <span className="font-bold">OFERTA EXPIRA EM: 23:59:46</span>
+            <span>OFERTA EXPIRA EM: 23:59:46</span>
           </div>
         </div>
 
@@ -94,51 +97,51 @@ export const Pricing = () => {
           {plans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg border-2 transition-all duration-300 hover:scale-105 ${
-                plan.popular ? 'border-purple-500 transform scale-105' : 'border-white/20'
+              className={`relative ${plan.bgColor} rounded-3xl p-8 shadow-xl border-2 transition-all duration-300 hover:scale-105 ${
+                plan.popular ? 'border-orange-400 transform scale-105' : 'border-gray-200'
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full text-sm font-bold">
+                  <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full text-sm font-bold">
                     MAIS VENDIDO
                   </div>
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <p className="text-sm text-gray-600 mb-2">{plan.title}</p>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">{plan.name}</h3>
+              <div className="text-center mb-8">
+                <p className="text-sm text-gray-500 mb-2">{plan.title}</p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">{plan.name}</h3>
                 
                 <div className="mb-6">
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <span className="text-lg text-gray-500 line-through">De {plan.originalPrice}</span>
-                    <span className="bg-red-500 text-white px-2 py-1 rounded text-sm font-bold">
+                    <span className="text-lg text-gray-400 line-through">De {plan.originalPrice}</span>
+                    <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
                       -{plan.discount}
                     </span>
                   </div>
-                  <div className="text-4xl font-bold text-gray-800 mb-1">
+                  <div className="text-5xl font-black text-gray-800 mb-2">
                     {plan.price}
-                    <span className="text-lg text-gray-600">{plan.period}</span>
+                    <span className="text-lg text-gray-500 font-normal">{plan.period}</span>
                   </div>
-                  <p className="text-sm text-gray-600">por apenas</p>
+                  <p className="text-sm text-gray-500">por apenas</p>
                 </div>
               </div>
 
-              <div className="space-y-3 mb-8">
+              <div className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">{feature}</span>
+                    <span className="text-sm text-gray-700 leading-relaxed">{feature}</span>
                   </div>
                 ))}
               </div>
 
               <Button 
-                className={`w-full py-4 text-lg font-bold rounded-2xl transition-all duration-300 ${
+                className={`w-full py-6 text-lg font-bold rounded-2xl transition-all duration-300 ${
                   plan.popular 
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white' 
-                    : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white'
+                    ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white' 
+                    : 'bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white'
                 }`}
               >
                 {plan.buttonText}
