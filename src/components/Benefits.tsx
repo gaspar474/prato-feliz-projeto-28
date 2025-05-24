@@ -1,5 +1,5 @@
 
-import { Check, Heart, Clock, Smile, Star, ChefHat, Utensils } from "lucide-react";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
 
 export const Benefits = () => {
   const benefits = [
@@ -33,41 +33,48 @@ export const Benefits = () => {
   return (
     <section className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Star className="w-8 h-8 text-yellow-500" />
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Por que o Prato Feliz Funciona?
-            </h2>
-            <Star className="w-8 h-8 text-yellow-500" />
+        <ScrollAnimation animation="fade-up">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span className="text-3xl">⭐</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+                Por que o Prato Feliz Funciona?
+              </h2>
+              <span className="text-3xl">⭐</span>
+            </div>
+            <p className="text-lg text-gray-600">
+              Descubra os benefícios que mais de 10.000 famílias já experimentaram
+            </p>
           </div>
-          <p className="text-lg text-gray-600">
-            Descubra os benefícios que mais de 10.000 famílias já experimentaram
-          </p>
-        </div>
+        </ScrollAnimation>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {benefits.map((benefit, index) => (
-            <div 
+            <ScrollAnimation 
               key={index}
-              className="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+              animation="fade-up"
+              delay={index * 100}
             >
-              <div className="text-4xl mb-6">{benefit.icon}</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{benefit.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-            </div>
+              <div className="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl mb-6">{benefit.icon}</div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">{benefit.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+              </div>
+            </ScrollAnimation>
           ))}
         </div>
 
-        <div className="text-center">
-          <div className="flex items-center justify-center gap-3">
-            <Utensils className="w-6 h-6 text-orange-500" />
-            <p className="text-xl font-bold text-gray-800">
-              Transforme cada refeição em momentos de alegria!
-            </p>
-            <Utensils className="w-6 h-6 text-orange-500" />
+        <ScrollAnimation animation="fade-up">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-2xl">🍴</span>
+              <p className="text-xl font-bold text-gray-800">
+                Transforme cada refeição em momentos de alegria!
+              </p>
+              <span className="text-2xl">🍴</span>
+            </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
