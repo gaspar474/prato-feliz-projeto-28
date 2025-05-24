@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Play, ArrowDown } from "lucide-react";
+import { Play, ArrowDown, Utensils, Heart, Sparkles } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -15,11 +15,25 @@ export const Hero = () => {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <div className="mb-8 animate-fade-in">
+          {/* Logo Section */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="relative">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                <Utensils className="w-10 h-10 text-white" />
+              </div>
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
+                <Sparkles className="w-3 h-3 text-white" />
+              </div>
+            </div>
+          </div>
+          
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent mb-6">
             Prato Feliz
           </h1>
-          <h2 className="text-2xl md:text-4xl font-semibold text-gray-800 mb-4">
+          <h2 className="text-2xl md:text-4xl font-semibold text-gray-800 mb-4 flex items-center justify-center gap-3">
+            <Heart className="w-8 h-8 text-pink-500 animate-pulse" />
             Chega de brigas na refeição!
+            <Heart className="w-8 h-8 text-pink-500 animate-pulse" />
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 mb-8">
             Seu filho vai amar comer saudável sem reclamações 🥦
