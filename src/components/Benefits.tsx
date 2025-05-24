@@ -1,5 +1,4 @@
-
-import { Check, Heart, Clock, Smile, Star, ChefHat } from "lucide-react";
+import { Check, Heart, Clock, Smile, Star, ChefHat, Utensils } from "lucide-react";
 
 export const Benefits = () => {
   const benefits = [
