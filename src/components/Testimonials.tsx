@@ -1,5 +1,20 @@
 
-import { Star, MessageCircle } from "lucide-react";
+import React from "react";
+import { Star, Instagram, ArrowLeft, ArrowRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel"; // Ensure this path is correct
+
+const PratoFelizLogoPlaceholder = () => (
+  <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-semibold shadow-sm">
+    PF
+  </div>
+);
 
 export const Testimonials = () => {
   const stats = [
@@ -9,26 +24,48 @@ export const Testimonials = () => {
     { number: "1300+", label: "Depoimentos positivos" }
   ];
 
-  const testimonials = [
+  const testimonialsData = [
     {
-      name: "Ana Paula",
-      username: "@anapaulasilva",
+      user: { username: "anapaulasilva" }, // Username without @
       text: "Minha filha de 4 anos que ODIAVA brócolis agora pede o 'bolinho verde mágico'! Não acredito que funcionou tão rápido! 🥦✨",
-      time: "2h"
+      instagramTime: "2h",
+      pratoFelizReply: {
+        text: "Que maravilha, ficamos felizes em saber que vocês estão gostando! Conte sempre conosco para refeições mágicas! ✨",
+      }
     },
     {
-      name: "Mariana Costa",
-      username: "@mari_costa",
+      user: { username: "mari_costa" },
       text: "Comprei ontem e hoje já fiz 3 receitas. Meu filho comeu TUDO e ainda pediu mais! Melhor investimento que já fiz! 👏",
-      time: "1d"
+      instagramTime: "1d",
+      pratoFelizReply: {
+        text: "Ficamos super felizes em ler isso, Mariana! Transformar a hora da refeição é nosso objetivo! 😊",
+      }
     },
     {
-      name: "Tatiana Silver",
-      username: "@tatijsilver",
+      user: { username: "tatijsilver" },
       text: "Eu comprei. Copiei várias receitas. Minha filha ama a panquequinha de banana ❤️",
-      time: "3d"
+      instagramTime: "9 min", // Matching reference image time for this specific one
+      pratoFelizReply: {
+        text: "Que maravilha, ficamos felizes em saber que vocês estão gostando ❤️",
+      }
     }
   ];
+
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+    setCount(api.scrollSnaps().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
     <section className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50">
@@ -42,34 +79,76 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-1 gap-6 mb-12 max-w-4xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold">
-                  {testimonial.name.charAt(0)}
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h4 className="font-bold text-gray-800">{testimonial.username}</h4>
-                    <MessageCircle className="w-4 h-4 text-blue-500" />
-                    <span className="text-sm text-gray-500">{testimonial.time}</span>
+        <Carousel
+          opts={{ loop: true, align: "center" }}
+          setApi={setApi}
+          className="w-full max-w-sm md:max-w-md mx-auto" // Adjusted max-width
+        >
+          <CarouselContent>
+            {testimonialsData.map((testimonial, index) => (
+              <CarouselItem key={index} className="flex justify-center">
+                <div className="w-full max-w-xs bg-white rounded-2xl shadow-xl overflow-hidden mx-auto"> {/* Card */}
+                  {/* Instagram Header */}
+                  <div className="flex justify-between items-center p-3 bg-gradient-to-r from-pink-500 via-red-400 to-yellow-500 text-white">
+                    <div className="flex items-center gap-2">
+                      <Instagram size={20} className="text-white" />
+                      <span className="font-semibold text-sm">Instagram</span>
+                    </div>
+                    <span className="text-xs">{testimonial.instagramTime}</span>
                   </div>
-                  <p className="text-gray-700 mb-3">
-                    {testimonial.text}
-                  </p>
-                  <div className="flex gap-1">
-                    {[1,2,3,4,5].map((star) => (
-                      <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                  {/* Content */}
+                  <div className="p-4">
+                    <h4 className="font-bold text-md mb-1 text-gray-900">{testimonial.user.username}</h4>
+                    <p className="text-gray-700 text-sm mb-4 leading-relaxed">{testimonial.text}</p>
+                    
+                    {/* Prato Feliz Reply */}
+                    <div className="bg-gray-50 p-3 rounded-lg shadow-inner">
+                      <div className="flex items-center gap-2 mb-1">
+                        <PratoFelizLogoPlaceholder />
+                        <span className="font-semibold text-xs text-gray-800">Prato Feliz</span>
+                      </div>
+                      <p className="text-xs text-gray-600 leading-snug">{testimonial.pratoFelizReply.text}</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          
+          {/* Navigation Controls: Arrows and Dots */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <CarouselPrevious 
+              variant="ghost" 
+              className="static transform-none w-8 h-8 p-0 rounded-full text-gray-600 hover:bg-gray-100 hover:text-gray-800"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </CarouselPrevious>
+            
+            <div className="flex items-center gap-1.5">
+              {Array.from({ length: count }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === current ? 'bg-pink-500 scale-125' : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Ir para o depoimento ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <CarouselNext 
+              variant="ghost" 
+              className="static transform-none w-8 h-8 p-0 rounded-full text-gray-600 hover:bg-gray-100 hover:text-gray-800"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </CarouselNext>
+          </div>
+        </Carousel>
+
+        {/* Stats Section (Kept as is) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-2">
