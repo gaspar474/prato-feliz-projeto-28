@@ -19,7 +19,7 @@ export const Footer = () => {
               <img 
                 src="/lovable-uploads/61282aeb-d0f4-4c64-8de0-933d1afbdd0f.png" 
                 alt="Prato Alegre Logo" 
-                className="w-16 h-16 object-contain"
+                className="w-24 h-24 md:w-32 md:h-32 object-contain"
               />
             </div>
             <p className="text-xl text-blue-200">

@@ -24,13 +24,13 @@ export const Hero = () => {
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <ScrollAnimation animation="fade-up">
           <div className="mb-12">
-            {/* Logo Section - Aumentado */}
+            {/* Logo Section - Aumentado ainda mais */}
             <div className="flex items-center justify-center mb-8">
               <div className="relative">
                 <img 
                   src="/lovable-uploads/61282aeb-d0f4-4c64-8de0-933d1afbdd0f.png" 
                   alt="Prato Alegre Logo" 
-                  className="w-32 h-32 object-contain"
+                  className="w-48 h-48 md:w-56 md:h-56 object-contain"
                 />
               </div>
             </div>
